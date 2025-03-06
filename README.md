@@ -33,31 +33,31 @@ cd project/backend
 npm install  # or yarn install
 ```
 
-### 3. Start the Backend Server
-```bash
-npm start  # or node server.js
-```
-The backend should now be running at `http://localhost:5000`
+### 3. Start the Frontend Server
 
----
-
-## Frontend Setup
-
-### 1. Navigate to the Frontend Directory
+### Navigate to the Frontend Directory
 ```bash
 cd ../frontend
 ```
 
-### 2. Install Dependencies
+### Install Dependencies
 ```bash
 npm install  # or yarn install
 ```
 
-### 3. Start the Frontend
+### Start the Frontend
 ```bash
 npm start  # or npm run dev (if using Vite)
 ```
 The frontend should now be running at `http://localhost:3000`
+
+---
+
+### 4. Start the Backend Server
+```bash
+npm start  # or nodeman server.js
+```
+The backend should now be running at `http://localhost:5000`
 
 ---
 
