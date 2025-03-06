@@ -14,9 +14,9 @@ This project is a full-stack application that fetches and manages category data 
 ## Prerequisites
 Ensure you have the following installed on your machine:
 
-- **Node.js** (for frontend and possibly backend)
+- **Node.js** 
 - **npm or yarn** (for package management)
-- **Backend dependencies** (depending on the backend tech)
+- **Backend dependencies** 
 
 ---
 
