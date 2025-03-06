@@ -44,7 +44,7 @@ The backend should now be running at `http://localhost:5000`
 
 ### Navigate to the Frontend Directory
 ```bash
-cd ../frontend
+cd Personal-Finance-Manager
 ```
 
 ### Install Dependencies
