@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
@@ -25,11 +24,11 @@ export default function RegisterPage() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
 
-    // Basic validation
+    // Validation
     if (!formData.name || !formData.email || !formData.password) {
       setError("All fields are required")
       return
@@ -40,19 +39,31 @@ export default function RegisterPage() {
       return
     }
 
-    // In a real app, you would send this data to your backend
-    // For demo purposes, we'll simulate a successful registration
-    localStorage.setItem(
-      "user",
-      JSON.stringify({
-        id: Date.now().toString(),
-        name: formData.name,
-        email: formData.email,
-      }),
-    )
+    try {
+      const response = await fetch("http://localhost:5000/users/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+        }),
+      })
 
-    // Redirect to dashboard
-    router.push("/dashboard")
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong")
+      }
+
+      // Store user details after successful registration
+      localStorage.setItem("user", JSON.stringify(data.user))
+
+      // Redirect to dashboard
+      router.push("/dashboard")
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "An unexpected error occurred")
+    }
   }
 
   return (
@@ -127,4 +138,3 @@ export default function RegisterPage() {
     </div>
   )
 }
-
