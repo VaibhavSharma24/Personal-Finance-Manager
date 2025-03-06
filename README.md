@@ -25,7 +25,6 @@ Ensure you have the following installed on your machine:
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/your-repo/project.git
-cd project/backend
 ```
 
 ### 2. Install Dependencies
