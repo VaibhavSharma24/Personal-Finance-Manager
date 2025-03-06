@@ -25,14 +25,22 @@ Ensure you have the following installed on your machine:
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/your-repo/project.git
+cd backend
 ```
 
 ### 2. Install Dependencies
 ```bash
 npm install  # or yarn install
 ```
+### 3.Start the Backend Server
+```bash
+npm start  # or nodeman server.js
+```
+The backend should now be running at `http://localhost:5000`
 
-### 3. Start the Frontend Server
+---
+## Frontend Setup
+### Start the Frontend Server
 
 ### Navigate to the Frontend Directory
 ```bash
@@ -49,14 +57,6 @@ npm install  # or yarn install
 npm start  # or npm run dev (if using Vite)
 ```
 The frontend should now be running at `http://localhost:3000`
-
----
-
-### 4. Start the Backend Server
-```bash
-npm start  # or nodeman server.js
-```
-The backend should now be running at `http://localhost:5000`
 
 ---
 
